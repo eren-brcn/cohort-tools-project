@@ -42,6 +42,7 @@ app.get("/api/students", (req, res) => {
 });
 
 
+
 // START SERVER
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
