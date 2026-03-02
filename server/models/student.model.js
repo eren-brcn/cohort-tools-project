@@ -18,4 +18,4 @@ const studentSchema = new Schema({
 
 const Student = mongoose.model("Student", studentSchema, "students");
 
-module.exports = Student;
+module.exports = Student
