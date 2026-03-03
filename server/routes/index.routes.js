@@ -53,6 +53,16 @@ router.delete("/students/:studentId", (req, res) => {
 
 // --- COHORT ROUTES ---
 
+// POST /api/cohorts - Creates a new cohort
+router.post("/cohorts", (req, res) => {
+  Cohort.create(req.body)
+    .then((createdCohort) => res.status(201).json(createdCohort))
+    .catch((error) => {
+      console.error("Failed to create cohort ->", error);
+      res.status(500).json({ error: "Failed to create cohort" });
+    });
+});
+
 // GET /api/cohorts - Retrieves all cohorts
 router.get("/cohorts", (req, res) => {
   Cohort.find()
